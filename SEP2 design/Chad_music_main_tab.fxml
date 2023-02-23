@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<HBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <VBox prefHeight="450.0" prefWidth="131.0">
+         <children>
+            <VBox prefHeight="141.0" prefWidth="134.0">
+               <children>
+                  <Button mnemonicParsing="false" onAction="#likedSongsPressed" text="Liked Songs">
+                     <VBox.margin>
+                        <Insets left="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#allSongsPressed" text="All Songs">
+                     <VBox.margin>
+                        <Insets left="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Button mnemonicParsing="false" onAction="#createPlaylistPressed" text="Create Playlist">
+                     <VBox.margin>
+                        <Insets left="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Button>
+                  <Label text="Your Playlists">
+                     <VBox.margin>
+                        <Insets left="10.0" top="10.0" />
+                     </VBox.margin>
+                  </Label>
+               </children>
+            </VBox>
+            <ListView fx:id="playlistView" prefHeight="253.0" prefWidth="134.0" />
+         </children>
+      </VBox>
+      <VBox prefHeight="450.0" prefWidth="574.0">
+         <children>
+            <VBox prefHeight="326.0" prefWidth="542.0">
+               <children>
+                  <Label fx:id="userHey" text="Hey User">
+                     <VBox.margin>
+                        <Insets left="20.0" top="20.0" />
+                     </VBox.margin>
+                  </Label>
+                  <Label text="Liked Songs">
+                     <VBox.margin>
+                        <Insets left="20.0" top="20.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font name="System Bold Italic" size="19.0" />
+                     </font>
+                  </Label>
+                  <HBox alignment="CENTER_LEFT" prefHeight="82.0" prefWidth="424.0">
+                     <children>
+                        <Label text="Search">
+                           <HBox.margin>
+                              <Insets left="10.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="searchBar">
+                           <HBox.margin>
+                              <Insets left="40.0" />
+                           </HBox.margin>
+                        </TextField>
+                        <ChoiceBox fx:id="searchChoice" prefHeight="26.0" prefWidth="72.0">
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                        </ChoiceBox>
+                     </children>
+                     <VBox.margin>
+                        <Insets />
+                     </VBox.margin>
+                  </HBox>
+                  <TableView fx:id="songView" prefHeight="180.0" prefWidth="534.0">
+                    <columns>
+                      <TableColumn fx:id="songColumn" prefWidth="170.0" text="Song" />
+                      <TableColumn fx:id="artistColumn" prefWidth="170.0" text="Artist" />
+                        <TableColumn fx:id="lengthColumn" prefWidth="170.0" text="Length" />
+                    </columns>
+                  </TableView>
+               </children>
+            </VBox>
+            <HBox alignment="CENTER_LEFT" prefHeight="86.0" prefWidth="506.0">
+               <children>
+                  <ImageView fx:id="songPicture" fitHeight="65.0" fitWidth="61.0" pickOnBounds="true" preserveRatio="true" />
+                  <VBox alignment="CENTER" prefHeight="94.0" prefWidth="84.0">
+                     <children>
+                        <Label fx:id="songLabel" prefHeight="18.0" prefWidth="89.0" text="Song name">
+                           <VBox.margin>
+                              <Insets left="5.0" />
+                           </VBox.margin>
+                        </Label>
+                        <Label fx:id="showLyricsLabel" onMouseClicked="#showLyricsLabel" text="Show lyrics">
+                           <VBox.margin>
+                              <Insets top="5.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="94.0" prefWidth="298.0">
+                     <children>
+                        <HBox alignment="CENTER" prefHeight="26.0" prefWidth="250.0">
+                           <children>
+                              <Button fx:id="shuffleButton" mnemonicParsing="false" onAction="#shufflePressed" prefHeight="26.0" prefWidth="54.0" text="Shuffle">
+                                 <HBox.margin>
+                                    <Insets right="10.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Button fx:id="backButton" mnemonicParsing="false" onAction="#backPressed" text="Back" />
+                              <Button fx:id="playButton" mnemonicParsing="false" onAction="#playPressed" text="Play">
+                                 <HBox.margin>
+                                    <Insets left="20.0" right="20.0" />
+                                 </HBox.margin>
+                              </Button>
+                              <Button fx:id="skipButton" mnemonicParsing="false" onAction="#skipPressed" text="Skip">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Button>
+                              <Button fx:id="repeatButton" mnemonicParsing="false" onAction="#repeatPressed" text="Repeat">
+                                 <HBox.margin>
+                                    <Insets left="10.0" />
+                                 </HBox.margin>
+                              </Button>
+                           </children>
+                           <VBox.margin>
+                              <Insets top="30.0" />
+                           </VBox.margin>
+                        </HBox>
+                        <HBox alignment="TOP_CENTER" prefHeight="54.0" prefWidth="94.0">
+                           <children>
+                              <Label fx:id="timeFromStart" text="00:00" />
+                              <Slider prefHeight="14.0" prefWidth="141.0">
+                                 <HBox.margin>
+                                    <Insets />
+                                 </HBox.margin>
+                              </Slider>
+                              <Label fx:id="timeFromEnd" text="00:00" />
+                           </children>
+                           <VBox.margin>
+                              <Insets top="20.0" />
+                           </VBox.margin>
+                        </HBox>
+                     </children>
+                  </VBox>
+                  <HBox prefHeight="106.0" prefWidth="166.0">
+                     <children>
+                        <Slider prefHeight="14.0" prefWidth="89.0">
+                           <HBox.margin>
+                              <Insets left="10.0" top="45.0" />
+                           </HBox.margin>
+                        </Slider>
+                        <Button fx:id="muteButton" mnemonicParsing="false" onAction="#mutePressed" text="Mute">
+                           <HBox.margin>
+                              <Insets top="38.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                  </HBox>
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</HBox>

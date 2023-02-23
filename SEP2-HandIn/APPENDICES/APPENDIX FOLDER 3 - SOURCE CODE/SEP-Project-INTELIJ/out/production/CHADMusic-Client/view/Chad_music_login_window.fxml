@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.LoginRegisterViewController">
+   <children>
+      <Label alignment="CENTER" prefWidth="640.0" text="CHAD-Music">
+         <font>
+            <Font name="System Bold" size="22.0" />
+         </font>
+         <VBox.margin>
+            <Insets top="20.0" />
+         </VBox.margin>
+      </Label>
+      <HBox prefHeight="290.0" prefWidth="640.0">
+         <children>
+            <VBox maxHeight="-Infinity" prefHeight="350.0" prefWidth="320.0">
+               <children>
+                  <Label alignment="CENTER" prefWidth="320.0" text="Welcome back!">
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Label>
+                  <HBox prefHeight="56.0" prefWidth="320.0">
+                     <children>
+                        <Label text="Username:">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="10.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="loginUsernameField" onAction="#onEnterLogin" prefHeight="40.0" prefWidth="200.0" />
+                     </children>
+                     <VBox.margin>
+                        <Insets top="10.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="72.0" prefHeight="56.0" prefWidth="320.0">
+                     <children>
+                        <Label text="Password:">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="10.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="loginPasswordField" onAction="#onEnterLogin" prefHeight="40.0" prefWidth="200.0">
+                           <HBox.margin>
+                              <Insets left="7.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <Button mnemonicParsing="false" onAction="#loginPressed" prefHeight="45.0" prefWidth="100.0" text="Login">
+                     <VBox.margin>
+                        <Insets left="110.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+            <VBox prefHeight="200.0" prefWidth="320.0">
+               <children>
+                  <Label alignment="CENTER" prefWidth="320.0" text="Not a user yet?">
+                     <VBox.margin>
+                        <Insets top="20.0" />
+                     </VBox.margin>
+                     <font>
+                        <Font size="22.0" />
+                     </font>
+                  </Label>
+                  <HBox prefHeight="56.0" prefWidth="320.0">
+                     <children>
+                        <Label text="Username:">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="10.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="registerUsernameField" onAction="#onEnterRegister" prefHeight="40.0" prefWidth="200.0" />
+                     </children>
+                  </HBox>
+                  <HBox layoutX="10.0" layoutY="62.0" prefHeight="56.0" prefWidth="320.0">
+                     <children>
+                        <Label text="Email:       ">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="10.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="emailField" onAction="#onEnterRegister" prefHeight="40.0" prefWidth="200.0" />
+                     </children>
+                  </HBox>
+                  <HBox prefHeight="56.0" prefWidth="320.0">
+                     <children>
+                        <Label text="Password:">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                           <HBox.margin>
+                              <Insets left="10.0" top="5.0" />
+                           </HBox.margin>
+                        </Label>
+                        <TextField fx:id="registerPasswordField" onAction="#onEnterRegister" prefHeight="40.0" prefWidth="200.0">
+                           <HBox.margin>
+                              <Insets left="5.0" />
+                           </HBox.margin>
+                        </TextField>
+                     </children>
+                  </HBox>
+                  <Button mnemonicParsing="false" onAction="#registerPressed" prefHeight="45.0" prefWidth="100.0" text="Register">
+                     <VBox.margin>
+                        <Insets left="110.0" />
+                     </VBox.margin>
+                  </Button>
+               </children>
+            </VBox>
+         </children>
+         <VBox.margin>
+            <Insets top="10.0" />
+         </VBox.margin>
+      </HBox>
+      <Label fx:id="errorLabel" alignment="CENTER" prefHeight="30.0" prefWidth="640.0" text="Error" textFill="RED">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Label>
+   </children>
+</VBox>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.LyricsViewController">
+   <children>
+      <HBox prefHeight="354.0" prefWidth="650.0">
+         <children>
+            <TextArea fx:id="lyricsArea" editable="false" focusTraversable="false" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="330.0" prefWidth="650.0" promptText="Lyrics here" wrapText="true">
+               <font>
+                  <Font size="22.0" />
+               </font>
+               <HBox.margin>
+                  <Insets left="25.0" top="10.0" />
+               </HBox.margin></TextArea>
+         </children>
+      </HBox>
+      <HBox alignment="CENTER" prefHeight="102.0" prefWidth="650.0">
+         <children>
+            <Label fx:id="songLabel" alignment="CENTER" prefHeight="18.0" prefWidth="250.0" text="Song name" translateX="-30.0">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </Label>
+            <VBox prefHeight="99.0" prefWidth="330.0">
+               <children>
+                  <HBox alignment="CENTER" prefHeight="51.0" prefWidth="232.0" translateX="-30.0" translateY="-10.0">
+                     <children>
+                        <Button fx:id="shuffleButton" mnemonicParsing="false" onAction="#shufflePressed" visible="false">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="backButton" mnemonicParsing="false" onAction="#backPressed" />
+                        <Button fx:id="playButton" mnemonicParsing="false" onAction="#playPressed">
+                           <HBox.margin>
+                              <Insets left="20.0" right="20.0" />
+                           </HBox.margin>
+                        </Button>
+                        <Button fx:id="skipButton" mnemonicParsing="false" onAction="#skipPressed">
+                           <HBox.margin>
+                              <Insets />
+                           </HBox.margin>
+                        </Button>
+                        <ToggleButton fx:id="repeat" mnemonicParsing="false" onAction="#repeatPressed">
+                           <HBox.margin>
+                              <Insets left="20.0" />
+                           </HBox.margin>
+                        </ToggleButton>
+                        <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" mnemonicParsing="false" onAction="#goBack" prefHeight="30.0" prefWidth="60.0" text="Back" translateX="20.0">
+                           <HBox.margin>
+                              <Insets left="30.0" />
+                           </HBox.margin>
+                        </Button>
+                     </children>
+                     <VBox.margin>
+                        <Insets top="30.0" />
+                     </VBox.margin>
+                  </HBox>
+                  <HBox alignment="TOP_CENTER" prefHeight="54.0" prefWidth="94.0">
+                     <children>
+                        <Label fx:id="timeFromStart" text="00:00">
+                           <HBox.margin>
+                              <Insets right="150.0" />
+                           </HBox.margin>
+                           <font>
+                              <Font size="15.0" />
+                           </font></Label>
+                     </children>
+                  </HBox>
+               </children>
+            </VBox>
+         </children>
+      </HBox>
+   </children>
+</VBox>
